@@ -31,7 +31,7 @@ export const Body = () => {
     fetchUser();
   }, []);
 
-  
+
   return (
     <div>
         <NavBar />

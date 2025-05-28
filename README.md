@@ -55,3 +55,5 @@ if token is not present redirect user to login page
 
 Logout
 Profile page
+
+feature: nomenclature => feat
