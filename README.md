@@ -58,5 +58,5 @@ Profile page
 
 feature: nomenclature => feat
 
-Get the feed, add the feed int the store
+Get the feed, add the feed into the store
 build the user card
