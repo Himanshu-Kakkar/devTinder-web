@@ -1,11 +1,11 @@
 # DevTinder
 
-## Ep-01
+## Ep-01 / 15
 - Created a vite + React applications
 - remove unnecessary code 
 - create a hello world app
 
-## Ep-02
+## Ep-02 / 16
 - Install tailwind css
 - Install Daisy UI
 - Add NavBar Component to App.jsx
@@ -42,3 +42,16 @@ Body
     Route: /login => login
     Route: /connections => Connections
     Route: /profile => Profile
+
+
+
+## Ep-03 / 17
+
+Refreshing the page... logged me out
+still i have token in my browser
+
+user cant access other routes without login
+if token is not present redirect user to login page
+
+Logout
+Profile page
