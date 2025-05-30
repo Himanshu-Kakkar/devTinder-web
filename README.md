@@ -60,3 +60,10 @@ feature: nomenclature => feat
 
 Get the feed, add the feed into the store
 build the user card
+
+Edit profile feature
+show Toast on saving profile
+
+## Ep-04 / 18
+
+See all my connections
