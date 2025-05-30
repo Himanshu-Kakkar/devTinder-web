@@ -75,3 +75,9 @@ To accept or reject requsts
 backend -> request/review/status/reqId
 
 
+## Ep-05 / 19
+
+sending requests -> Interested / ignored button working in Feed
+signup new user
+
+

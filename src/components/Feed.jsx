@@ -31,7 +31,7 @@ const Feed = () => {
 
   if(!feed) return;
 
-  if(feed.length <= 0) return <h1 className='flex justify-center'>NO new user found</h1>
+  if(feed.length <= 0) return <h1 className='flex justify-center my-10'>NO new user found</h1>
 
   return (
     feed && (

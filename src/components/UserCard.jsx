@@ -17,11 +17,11 @@ const UserCard = ({ user }) => {
   const handleSenRequest = async (status, userId) => {
     try {
       const res = await axios.post(BASE_URL + "/request/send/" + status + "/" + userId, {}, {withCredentials: true});
-      console.log(res);
+      // console.log(res);
       dispatch(removeUserFromFeed(userId));
 
     } catch (err) {
-        console.error("Error in sending request", err);      
+        console.error("Error in sending request", err);
     }
   }
 
