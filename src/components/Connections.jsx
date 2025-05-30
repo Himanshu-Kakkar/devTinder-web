@@ -1,7 +1,7 @@
 import React from 'react'
 import { BASE_URL } from '../utils/constants'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addConnections } from '../utils/connectionSlice'
 
@@ -42,7 +42,7 @@ const Connections = () => {
                             <img 
                                 src={photoUrl} 
                                 alt={`${firstName} 's profile photo`}
-                                className='w-20 h-20 rounded-full' />
+                                className='w-20 h-20 rounded-full object-' />
                         </div>
                         <div className='text-left mx-4'>
                             <h2 className='font-bold text-xl'>

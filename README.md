@@ -66,4 +66,12 @@ show Toast on saving profile
 
 ## Ep-04 / 18
 
-See all my connections
+new page to See all my connections
+new page to See all my requests
+
+add functionalities in Requests.jsx component 
+To accept or reject requsts 
+
+backend -> request/review/status/reqId
+
+
