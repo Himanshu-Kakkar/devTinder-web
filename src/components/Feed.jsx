@@ -4,7 +4,7 @@ import { BASE_URL } from '../utils/constants'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { addFeed } from '../utils/feedSlice';
-import UserCard from "/Users/himanshukakkar/Desktop/Namaste NodeJS/devTinder-web/src/components/userCard";
+import UserCard from './UserCard';
 
 
 const Feed = () => {
