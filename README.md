@@ -1,4 +1,4 @@
-# DevTinder
+# DevTinder-web
 
 ## Ep-01 / 15
 - Created a vite + React applications
@@ -81,3 +81,25 @@ sending requests -> Interested / ignored button working in Feed
 signup new user
 
 
+## S03 Ep - 01
+
+    - signup on aws
+    - Launch instances
+    - chmod 400 <secret>.pem
+    - cd Downloads
+    - ssh -i "DevTinder-secret.pem" ubuntu@ec2-13-60-212-146.eu-north-1.compute.amazonaws.com
+    - Install Node version spesific that is used on your project
+    - Git clone both frontEnd and Backend 
+    - Git pull if any changes is there
+    - Frontend
+        - npm i -> dependencies
+        - npm run build // created dist folder or production ready code
+        - sudo apt update
+        - sudo apt install nginx
+        - sudo systemctl start nginx
+        - sudo systemctl enable nginx
+        - sudo scp -r dist/* /var/www/html/ // copy code 
+        - Enable port :80 of your instance
+
+# TODO 
+### create logo and fency title
