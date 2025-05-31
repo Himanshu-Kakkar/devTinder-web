@@ -101,5 +101,5 @@ signup new user
         - sudo scp -r dist/* /var/www/html/ // copy code 
         - Enable port :80 of your instance
 
-# TODO 
-### create logo and fency title
+
+#### modified the BASE_URL 
