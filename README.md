@@ -103,3 +103,12 @@ signup new user
 
 
 #### modified the BASE_URL 
+
+updated the code 
+git pull 
+but but but 
+dist folder
+production level folderr does not have any change 
+so again 
+npm run build
+sudo scp -r dist/* /var/www/html/ // copy code 
