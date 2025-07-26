@@ -29,9 +29,14 @@ const UserCard = ({ user }) => {
 
     user && (<div className="card bg-base-300 w-96 shadow-sm">
       <figure>
-        <img
+        {user.photoUrl ?
+          <img
           src={user.photoUrl}
-          alt="User-Profile" />
+          alt="User-Profile" /> :
+          <img src={"https://freesvg.org/img/abstract-user-flat-4.png"}
+          alt="User-Profile"/>
+        }
+        
       </figure>
       <div className="card-body">
         <h2 className="card-title">{firstName + " " + lastName}</h2>
