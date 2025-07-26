@@ -31,7 +31,7 @@ const UserCard = ({ user }) => {
       <figure>
         <img
           src={user.photoUrl}
-          alt="Simran" />
+          alt="User-Profile" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{firstName + " " + lastName}</h2>

@@ -89,6 +89,7 @@ signup new user
     - cd Downloads
     - ssh -i "DevTinder-secret.pem" ubuntu@ec2-13-60-212-146.eu-north-1.compute.amazonaws.com
     - Install Node version spesific that is used on your project
+      
     - Git clone both frontEnd and Backend 
     - Git pull if any changes is there
     - Frontend
