@@ -137,3 +137,20 @@ sudo scp -r dist/* /var/www/html/ // copy code
 
 
 
+# real time chat using webSocket(socket.io)
+
+#### Web Socket is topic
+
+ - Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.
+
+#### low-latency: 
+    fast, seemless, smooth
+#### Bi-directional
+    APIs are uni directional, client request something then only server sends
+    in WebSocket client and server both can send something to each other simultaneously
+
+ -  Build th UI for a chat window on /chat/:targetUserId
+ - setup socket.io in backend
+ - npm i socket.io for backend
+ - npm i socket.io-client for frontend
+ 

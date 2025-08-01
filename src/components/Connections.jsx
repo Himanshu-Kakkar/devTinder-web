@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addConnections } from '../utils/connectionSlice'
+import { Link } from 'react-router-dom'
 
 const Connections = () => {
     const connections = useSelector((store) => store.connections);
@@ -50,6 +51,13 @@ const Connections = () => {
                             </h2>
                             { age && gender && <p>{age + ", " + gender}</p>}
                             <p>{about + " " + firstName}</p>
+                        </div>
+                        <div>
+                            <Link to={"/chat/" + _id}>
+                                <button className="btn btn-secondary mx-2">
+                                    Chat
+                                </button>
+                            </Link>
                         </div>
                         
                     </div>
