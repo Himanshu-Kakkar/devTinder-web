@@ -11,9 +11,13 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
     const user = useSelector(store => store.user);
+    const [targetUserInfo, setTargetUserInfo] = useState(null);
+
+
     // console.log(user);
     const userId = user?._id;
 
+    const roomId = [userId, targetUserId].sort().join("_");
     // console.log(targetUserId);
 
     const fetchChatMessages = async () => {
@@ -33,11 +37,28 @@ const Chat = () => {
         });
         setMessages(chatMessages);
     }
+    const fetchTargetUserInfo = async () => {
+        try {
+            const res = await axios.get(`${BASE_URL}/user/${targetUserId}`, {
+            withCredentials: true,
+        });
+            setTargetUserInfo(res.data);
+        } catch (err) {
+            console.error("Error fetching target user info:", err);
+        }
+};
+
+    useEffect(() => {
+        if (targetUserId) {
+            fetchTargetUserInfo();
+        }
+    }, [targetUserId]);
+
 
     useEffect(()=> {
 
         if(!userId) { return; }
-        
+
         fetchChatMessages();
 
         const socket = createSocketConnection();
@@ -64,9 +85,34 @@ const Chat = () => {
         };
     }, [userId, targetUserId]);
 
+
+    // useEffect(() => {
+    //     if (messages.length <= 20) return;
+
+    //     const trimMessages = async () => {
+    //         try {
+    //         console.log("roomId is okay", roomId);
+    //         await axios.post(`${BASE_URL}/chattrim/${roomId}`);
+    //         // Optional: Update local state to match (if needed)
+    //         // setMessages(prev => prev.slice(-20));
+    //         } catch (error) {
+    //         console.error("Trimming failed:", error);
+    //         }
+    //     };
+
+    //     trimMessages();
+    // }, [messages, roomId]);
+
+
     // step: 1
     // connection create krke msg backend pr bheja
     const sendMessage = ()=> {
+
+        if(!newMessage.trim()){
+            setNewMessage("");
+            return;
+        };
+
         const socket = createSocketConnection();
         socket.emit("sendMessage", {
             firstName: user.firstName,
@@ -75,11 +121,45 @@ const Chat = () => {
             targetUserId,
             text: newMessage,
         });
+
+        setNewMessage("");
     };
+    const clearChat = async () => {
+        // pop up a warning page with that all the messages will be also deleted from receiver's side
+        // delete or cancel
+        // remove popup page
+        // clear all chats from DB
+        const confirmed = window.confirm("Are you sure you want to delete all messages? This will also delete them for the receiver.");
+
+        if (!confirmed) return;
+
+        try {
+            // Call your backend API to clear chat for both users
+            await fetch(`${BASE_URL}/delete-chat/${targetUserId}`, {
+              method: 'DELETE',
+              credentials: 'include',
+            });
+
+            // Clear local chat
+            setMessages([]);
+        } catch (err) {
+            console.error("Error clearing chat:", err);
+            alert("Failed to delete chat. Try again later.");
+        }
+    }
+
+
 
   return (
     <div className="w-3/4 mx-auto border border-gray-600 m-5 h-[70vh] flex flex-col">
-      <h1 className="p-5 border-b border-gray-600">Chat</h1>
+        <div className='flex justify-between border-b border-gray-600'>
+            <h1 className="p-5">{targetUserInfo? targetUserInfo.firstName + " " + targetUserInfo.lastName : "Chat"}</h1>
+            <button onClick={clearChat} className="flex items-center gap-2 p-2 hover:bg-red-700 rounded cursor-pointer">
+                <img src="../../delete.png" alt="Delete" className="w-13 h-5 px-4" />
+            </button>
+        </div>
+        
+      
       <div className="flex-1 overflow-scroll p-5">
         {messages.map((msg, index) => {
           return (
