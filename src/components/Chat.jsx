@@ -124,6 +124,7 @@ const Chat = () => {
 
         setNewMessage("");
     };
+    
     const clearChat = async () => {
         // pop up a warning page with that all the messages will be also deleted from receiver's side
         // delete or cancel
