@@ -5,6 +5,7 @@ import { BASE_URL } from '../utils/constants';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const EditProfile = ( {user} ) => {
@@ -19,6 +20,7 @@ const EditProfile = ( {user} ) => {
 
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     const saveProfile = async() => {
@@ -40,6 +42,7 @@ const EditProfile = ( {user} ) => {
             setTimeout(() => {
                 setShowToast(false);
             },3000);
+            navigate('/');
 
         } catch (err) {
             setError(err.response.data);

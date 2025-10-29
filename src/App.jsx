@@ -11,6 +11,7 @@ import Connections from "./components/Connections";
 import Requests from "./components/Requests";
 import Premium from "./components/Premium";
 import Chat from "./components/Chat";
+import Gemini from "./components/Gemini";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path="/requests" element={<Requests/>}/>
             <Route path="/premium" element={<Premium/>}/>
             <Route path="/chat/:targetUserId" element={<Chat/>}/>
+            <Route path="/ai/search" element={<Gemini/>}/>
           </Route>
           
         </Routes>

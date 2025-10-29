@@ -68,6 +68,11 @@ const NavBar = () => {
                   Premium
                 </Link>
               </li>
+              {/* <li>
+                <Link to="/ai/search">
+                  Search with AI
+                </Link>
+              </li> */}
               <li><a onClick={handleLogout}>Logout</a></li>
             </ul>
           </div>
