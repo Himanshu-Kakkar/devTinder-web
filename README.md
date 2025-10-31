@@ -2,7 +2,7 @@
 
 > This is the **frontend folder only**. The backend repo can be found [here](https://github.com/Himanshu-Kakkar/devConnect-backend).
 
-Live URL: [devConnect.com] (https://devconnect-web-3fxq.onrender.com/)
+Live URL: [devConnect.com](https://devconnect-web-3fxq.onrender.com/)
 
 This repo contains the **frontend code** for the **devConnect** application — a platform designed to connect developers, facilitate communication, and enable smooth collaboration.  
 The frontend provides an elegant and responsive user interface for authentication, chatting, payments, and profile management.
